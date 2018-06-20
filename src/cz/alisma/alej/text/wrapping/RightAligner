@@ -37,12 +37,12 @@ public class RightAligner implements Aligner {
     @Override
     public String format(List<String> words) {
         StringBuilder result = new StringBuilder();
-        int spacesBefore = TOTAL_WIDTH;
+        int spaces = TOTAL_WIDTH;
         for (String word : words) {
-            spacesBefore -= word.length();
+            spaces -= word.length();
         }
-        spacesBefore -= words.size() - 1;
-        for (int i = 0; i < spacesBefore; i += 1) {
+        spaces -= words.size() - 1;
+        for (int i = 0; i < spaces; i += 1) {
             result.append(" ");
         }
         boolean first = true;
